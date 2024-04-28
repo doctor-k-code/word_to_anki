@@ -16,6 +16,11 @@ from utils import file_to_table, table_to_csv
 
 st.title("wordファイルをanki用のCSVファイルに変換します")
 
+'''
+## 使用方法
+### まずはワードファイルを作成します
+'''
+
 title = st.text_input("タイトル")
 
 uploaded_files = st.file_uploader(
