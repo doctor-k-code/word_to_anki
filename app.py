@@ -18,9 +18,23 @@ from utils import file_to_table, table_to_csv
 # wordファイルをanki用のCSVファイルに変換します
 ## 前提
 * 教科書などの暗記事項を[anki](https://apps.ankiweb.net/)のカードにします。
+* フィールドは"Front", "Back", "Title", "Page"で出力します。
+* Front: カードの表
+* Back: カードの裏
+* Title: 教科書名を想定
+* Page: ページ番号
 ## 使用方法
-### まずはワードファイルを作成します
+### まずは以下のようなワードファイルを作成します
 '''
+code = '''p.1
+このソフトウェアを開発したのは誰か答えよ。
+Dr.K
+
+p.5
+このソフトウェアの開発者のブログのURLを答えよ。
+https://doctor-k.net/
+'''
+st.code('')
 
 title = st.text_input("タイトル")
 
