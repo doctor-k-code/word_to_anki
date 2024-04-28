@@ -96,3 +96,5 @@ st.code(back_temp)
 7. ノートタイプ"教科書"でCSVファイルを読み込む
 8. 正しく暗記カードが作成されているかを確認する
 '''
+
+st.image("images/icon.png")
