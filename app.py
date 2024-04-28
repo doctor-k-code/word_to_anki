@@ -16,7 +16,7 @@ from utils import file_to_table, table_to_csv
 
 st.title("wordファイルをanki用のCSVファイルに変換します")
 
-title = st.text_input("タイトル")
+title = st.text_input("タイトル", help="必須項目")
 
 uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
