@@ -31,6 +31,7 @@ for uploaded_file in uploaded_files:
     # stringio = StringIO(bytes_data.decode("utf-8"))
     # st.write(stringio)
     doc = docx.Document(uploaded_file)
+    st.write(doc.paragraphs)
 """
     # 空白を除き、各段落をリストで管理する。
     all_paragraph = []
