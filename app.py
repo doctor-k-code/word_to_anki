@@ -26,9 +26,9 @@ uploaded_files = st.file_uploader(
 table = None
 for uploaded_file in uploaded_files:
     st.write("filename:", uploaded_file.name)
-    bytes_data = uploaded_file.getvalue()
+    bytes_data = uploaded_file.read()
     stringio = StringIO(bytes_data.decode("utf-8"))
-    st.write(bytes_data)
+    st.write(stringio)
     # doc = docx.Document(uploaded_file)
 """
     # 空白を除き、各段落をリストで管理する。
