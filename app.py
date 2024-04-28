@@ -1,7 +1,7 @@
 """
 [name] app.py
 [purpose] word to csv for anki
-[references]
+[reference]
 
 written by Dr.K, 2024/4/28
 """
@@ -10,7 +10,7 @@ import glob
 import os
 import shutil
 
-import docx
+# import docx
 import numpy as np
 import pandas as pd
 import streamlit as st
