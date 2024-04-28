@@ -25,16 +25,26 @@ from utils import file_to_table, table_to_csv
 * Page: ページ番号
 ## 使用方法
 ### まずは以下のようなワードファイルを作成します
+example.docx
 '''
+
 word_example = '''p.1
-このソフトウェアを開発したのは誰か答えよ。
+このサイトを開発したのは誰か答えよ。
 Dr.K
 
-p.5
-このソフトウェアの開発者のブログのURLを答えよ。
+p.3
+このサイトの開発者のブログURLを答えよ。
 https://doctor-k.net/
+
+p.5
+このサイトのコードはどこで見られるか答えよ。
+https://github.com/doctor-k-code
 '''
 st.code(word_example)
+
+'''
+### 後はタイトル（教科書名など）を入力してワードファイルをアップロードします。
+'''
 
 title = st.text_input("タイトル")
 
