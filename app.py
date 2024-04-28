@@ -101,12 +101,9 @@ st.code(back_temp)
 '''
 
 st.divider()
-st.write('### このサイトの製作者')
-left, right = st.columns(2)
-with left:
-    st.image(ICON_PATH, width=200, caption="駆け出し医師Dr.K")
-with right:
-    '''
-    * [ブログ](https://doctor-k.net)もよろしくお願いします
-    * 作成したコードは[こちら](https://github.com/doctor-k-code)
-    '''
+'''
+### このサイトの製作者
+* [ブログ](https://doctor-k.net)もよろしくお願いします
+* 作成したコードは[こちら](https://github.com/doctor-k-code)
+'''
+st.image(ICON_PATH, width=200, caption="駆け出し医師Dr.K")
