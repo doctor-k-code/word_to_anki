@@ -49,3 +49,5 @@ for uploaded_file in uploaded_files:
         st.write(f'段落数が一致しません。表を確認してください: {uploaded_file.name}')
 
     st.write(all_paragraph[0])
+    st.write(all_paragraph[1])
+    st.write(all_paragraph[2])
