@@ -20,13 +20,14 @@ import streamlit as st
 st.title("wordファイルをanki用のCSVファイルに変換します")
 
 uploaded_files = st.file_uploader(
-    "wordファイルをアップロードして下さい。", accept_multiple_files=True)
+    "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 table = None
 for uploaded_file in uploaded_files:
-    byte_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
-    doc = docx.Document(uploaded_file)
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data)
+    # doc = docx.Document(uploaded_file)
 """
     # 空白を除き、各段落をリストで管理する。
     all_paragraph = []
