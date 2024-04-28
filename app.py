@@ -86,7 +86,7 @@ back_temp = '''{{FrontSide}}
 {{Back}}
 
 <div class = "ref">
-{{Title}}{{Page}}
+{{Title}} {{Page}}
 </div>
 '''
 st.code(back_temp)
