@@ -14,9 +14,10 @@ import streamlit as st
 from utils import file_to_table, table_to_csv
 
 
-st.title("wordファイルをanki用のCSVファイルに変換します")
-
 '''
+# wordファイルをanki用のCSVファイルに変換します
+## 前提
+* 教科書などの暗記事項を[anki](https://apps.ankiweb.net/)のカードにします。
 ## 使用方法
 ### まずはワードファイルを作成します
 '''
