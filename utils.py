@@ -59,4 +59,4 @@ def file_to_table(uploaded_file, table=None, title=None):
 @st.cache_data
 def table_to_csv(df):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
-    return df.to_csv().encode('utf-8')
+    return df.to_csv(header=False, index=False).encode('utf-8')

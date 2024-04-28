@@ -1,1 +1,0 @@
-# word_to_anki
