@@ -21,7 +21,27 @@ st.title("wordファイルをanki用のCSVファイルに変換します")
 
 uploaded_files = st.file_uploader(
     "wordファイルをアップロードして下さい。", accept_multiple_files=True)
+
+table = None
 for uploaded_file in uploaded_files:
     byte_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
-    
+    doc = docx.Document(uploaded_file.byte)
+
+    # 空白を除き、各段落をリストで管理する。
+    all_paragraph = []
+    for par in doc.paragraphs:
+        text = par.text
+        if text:
+            all_paragraph.append(text)
+
+    # 表（front）、裏（back）、ページ数（page）のペアになるはずである
+    # 3の倍数になっていることを確認する
+    rest_par_num = len(all_paragraph) % 3
+    if rest_par_num != 0:
+        # どこかに過不足があるためにズレが生じていると考えられる
+        # 余りを除いて表を作成し、Debugの参考にする
+        all_paragraph = all_paragraph[:-rest_par_num]
+        st.write(f'段落数が一致しません。表を確認してください: {uploaded_file.name}')
+
+    st.write(all_paragraph[0])
