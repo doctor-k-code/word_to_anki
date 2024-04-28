@@ -24,6 +24,7 @@ uploaded_files = st.file_uploader(
 if st.button("実行"):
     if title is None:
         st.write("タイトルを入力して下さい。")
+        st.write("-----")
     else:
         st.write(title, "++++")
         time_stamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
