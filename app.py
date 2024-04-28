@@ -16,14 +16,14 @@ from utils import file_to_table, table_to_csv
 
 st.title("wordファイルをanki用のCSVファイルに変換します")
 
-title = st.text_input("タイトル", help="必須項目")
+title = st.text_input("タイトル")
 
 uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 if st.button("実行"):
     if not title:
-        st.write("タイトルを入力して下さい。")
+        st.write("*タイトル*を入力して下さい。")
     else:
         time_stamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
         time_stamp = time_stamp.strftime('%m%d%H%M')
