@@ -8,6 +8,7 @@ written by Dr.K, 2024/4/28
 """
 import datetime
 import glob
+from io import StringIO
 import os
 import shutil
 
@@ -26,6 +27,7 @@ table = None
 for uploaded_file in uploaded_files:
     st.write("filename:", uploaded_file.name)
     bytes_data = uploaded_file.getvalue()
+    stringio = StringIO(bytes_data.decode("utf-8"))
     st.write(bytes_data)
     # doc = docx.Document(uploaded_file)
 """
