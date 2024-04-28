@@ -21,5 +21,5 @@ uploaded_files = st.file_uploader(
 if st.button("実行"):
     table = None
     for uploaded_file in uploaded_files:
-        table = file_to_table(uploaded_file, title=title)
+        table = file_to_table(uploaded_file, table=table, title=title)
     st.dataframe(table)
