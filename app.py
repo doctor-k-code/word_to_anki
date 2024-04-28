@@ -26,7 +26,7 @@ from utils import file_to_table, table_to_csv
 ## 使用方法
 ### まずは以下のようなワードファイルを作成します
 '''
-code = '''p.1
+word_example = '''p.1
 このソフトウェアを開発したのは誰か答えよ。
 Dr.K
 
@@ -34,7 +34,7 @@ p.5
 このソフトウェアの開発者のブログのURLを答えよ。
 https://doctor-k.net/
 '''
-st.code('')
+st.code(word_example)
 
 title = st.text_input("タイトル")
 
