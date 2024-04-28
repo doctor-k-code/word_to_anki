@@ -17,8 +17,9 @@ from utils import file_to_table, table_to_csv
 '''
 # wordファイルをanki用のCSVファイルに変換します
 ## 前提
-* 教科書などの暗記事項を[anki](https://apps.ankiweb.net/)のカードにします
-* フィールドは"Front", "Back", "Title", "Page"で出力します
+* 教科書などの暗記事項をwordファイルにまとめます
+* それを自動で[anki](https://apps.ankiweb.net/)用のCSVファイルで出力します
+* ankiカードのフィールドは"Front", "Back", "Title", "Page"です
 * Front: カードの表
 * Back: カードの裏
 * Title: 教科書名などを想定
