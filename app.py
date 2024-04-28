@@ -26,7 +26,7 @@ table = None
 for uploaded_file in uploaded_files:
     byte_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
-    st.write(byte_data)
+    doc = docx.Document(uploaded_file)
 """
     # 空白を除き、各段落をリストで管理する。
     all_paragraph = []
