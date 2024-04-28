@@ -22,11 +22,9 @@ uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 if st.button("実行"):
-    if title is None:
+    if not title:
         st.write("タイトルを入力して下さい。")
-        st.write("-----")
     else:
-        st.write(title, "++++")
         time_stamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
         time_stamp = time_stamp.strftime('%m%d%H%M')
         table = None
