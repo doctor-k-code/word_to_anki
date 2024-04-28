@@ -69,3 +69,30 @@ if st.button("実行"):
         result_csv = table_to_csv(table)
         file_name = '_'.join(['for_anki', time_stamp+'.csv'])
         st.download_button(label="CSVファイルをダウンロード", data=result_csv, file_name=file_name)
+
+'''
+### CSVファイルをダウンロードしたらPC版のankiで登録をします
+1. ankiを起動する
+2. （初めての方のみ）「ツール>ノートタイプを管理>追加」からノートタイプを追加する
+3. （初めての方のみ）"基本"のノートタイプを複製して、"教科書"という名前で登録する
+4. （初めての方のみ）"教科書"のフィールドを"Front", "Back", "Title", "Page"にする
+5. （初めての方のみ）"教科書"のカードを開いて、裏面のテンプレートを以下に変更する
+'''
+
+back_temp = '''{{FrontSide}}
+
+<hr id=answer>
+
+{{Back}}
+
+<div class = "ref">
+{{Title}}{{Page}}
+</div>
+'''
+st.code(back_temp)
+
+'''
+5. 「ファイル>読み込む」でダウンロードしたCSVファイルを選択する
+6. ノートタイプ"教科書"でCSVファイルを読み込む
+7. 正しく暗記カードが作成されているかを確認する
+'''
