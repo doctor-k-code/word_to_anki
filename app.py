@@ -31,8 +31,7 @@ for uploaded_file in uploaded_files:
     # stringio = StringIO(bytes_data.decode("utf-8"))
     # st.write(stringio)
     doc = docx.Document(uploaded_file)
-    st.write(doc.paragraphs)
-"""
+
     # 空白を除き、各段落をリストで管理する。
     all_paragraph = []
     for par in doc.paragraphs:
@@ -49,4 +48,4 @@ for uploaded_file in uploaded_files:
         all_paragraph = all_paragraph[:-rest_par_num]
         st.write(f'段落数が一致しません。表を確認してください: {uploaded_file.name}')
 
-    st.write(all_paragraph[0])"""
+    st.write(all_paragraph[0])
