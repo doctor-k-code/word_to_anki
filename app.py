@@ -97,4 +97,13 @@ st.code(back_temp)
 8. 正しく暗記カードが作成されているかを確認する
 '''
 
-st.image("images/icon.png")
+left, right = st.columns(2)
+with left:
+    st.write("このサイトの製作者")
+    st.image("images/icon.png")
+with right:
+    '''
+    * 駆け出し医師Dr.Kという名前で活動しています
+    * [ブログ](https://doctor-k.net)もよろしくお願いします
+    * 作成したコードは[こちら](https://github.com/doctor-k-code)
+    '''
