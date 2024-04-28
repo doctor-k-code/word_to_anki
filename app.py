@@ -21,4 +21,5 @@ uploaded_files = st.file_uploader(
 table = None
 for uploaded_file in uploaded_files:
     table = file_to_table(uploaded_file, title=title)
-    
+
+st.dataframe(table)
