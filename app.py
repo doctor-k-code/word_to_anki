@@ -6,9 +6,11 @@
 
 written by Dr.K, 2024/4/28
 """
+import datetime
+
 import streamlit as st
 
-from utils import file_to_table
+from utils import file_to_table, table_to_csv
 
 
 st.title("wordファイルをanki用のCSVファイルに変換します")
@@ -19,7 +21,12 @@ uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 if st.button("実行"):
+    time_stamp = datetime.datetime.now().strftime('%m%d%H%M')
     table = None
     for uploaded_file in uploaded_files:
         table = file_to_table(uploaded_file, table=table, title=title)
     st.dataframe(table)
+
+    result_csv = table_to_csv(table)
+    file_name = '_'.join(['for_anki', time_stamp+'.csv'])
+    st.download_button(label="ダウンロード", data=result_csv, file_name=file_name)

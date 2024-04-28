@@ -44,7 +44,7 @@ def file_to_table(uploaded_file, table=None, title=None):
         # どこかに過不足があるためにズレが生じていると考えられる
         # 余りを除いて表を作成し、Debugの参考にする
         all_paragraph = all_paragraph[:-rest_par_num]
-        st.write(f'段落数が一致しません。ファイルを確認して下さい。: {uploaded_file.name}')
+        st.write(f'段落数が一致しません。次のファイルを確認して下さい。: {uploaded_file.name}')
 
     # リストを表に変換する
     # tableがNoneでなければ結合して返す
@@ -53,3 +53,10 @@ def file_to_table(uploaded_file, table=None, title=None):
         return tmp_table
     else:
         return pd.concat([table, tmp_table], axis=0)
+
+
+# 表をCSVファイルにする関数
+@st.cache_data
+def table_to_csv(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
