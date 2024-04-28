@@ -103,7 +103,7 @@ st.code(back_temp)
 st.divider()
 '''
 ### このサイトの製作者
-* [ブログ](https://doctor-k.net)もよろしくお願いします
-* 作成したコードは[こちら](https://github.com/doctor-k-code)
+* [ブログ](https://doctor-k.net)をやっています
+* 作成したコードは[こちら](https://github.com/doctor-k-code)から
 '''
 st.image(ICON_PATH, width=200, caption="駆け出し医師Dr.K")
