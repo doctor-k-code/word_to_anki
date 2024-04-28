@@ -8,6 +8,7 @@ written by Dr.K, 2024/4/28
 """
 import datetime
 
+import pytz
 import streamlit as st
 
 from utils import file_to_table, table_to_csv
@@ -21,7 +22,8 @@ uploaded_files = st.file_uploader(
     "wordファイルをアップロード", type="docx", accept_multiple_files=True)
 
 if st.button("実行"):
-    time_stamp = datetime.datetime.now().strftime('%m%d%H%M')
+    time_stamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+    time_stamp = time_stamp.strftime('%m%d%H%M')
     table = None
     for uploaded_file in uploaded_files:
         table = file_to_table(uploaded_file, table=table, title=title)
