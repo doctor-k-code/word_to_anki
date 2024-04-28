@@ -14,6 +14,9 @@ import streamlit as st
 from utils import file_to_table, table_to_csv
 
 
+ICON_PATH = "images/icon.png"
+
+
 '''
 # wordファイルをanki用のCSVファイルに変換します
 ## 前提
@@ -97,13 +100,11 @@ st.code(back_temp)
 8. 正しく暗記カードが作成されているかを確認する
 '''
 
-left, right = st.columns(2)
-with left:
-    st.write("このサイトの製作者")
-    st.image("images/icon.png")
-with right:
-    '''
-    * 駆け出し医師Dr.Kという名前で活動しています
-    * [ブログ](https://doctor-k.net)もよろしくお願いします
-    * 作成したコードは[こちら](https://github.com/doctor-k-code)
-    '''
+st.divider()
+'''
+### このサイトの製作者
+* 駆け出し医師Dr.Kという名前で活動しています
+* [ブログ](https://doctor-k.net)もよろしくお願いします
+* 作成したコードは[こちら](https://github.com/doctor-k-code)
+'''
+st.image(ICON_PATH)
