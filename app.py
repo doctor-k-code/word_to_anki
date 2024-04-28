@@ -68,5 +68,4 @@ if st.button("実行"):
 
         result_csv = table_to_csv(table)
         file_name = '_'.join(['for_anki', time_stamp+'.csv'])
-        st.write("出力に問題がないことを確認して下さい")
-        st.download_button(label="ダウンロード", data=result_csv, file_name=file_name)
+        st.download_button(label="CSVファイルをダウンロード", data=result_csv, file_name=file_name)
