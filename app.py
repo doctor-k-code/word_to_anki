@@ -10,7 +10,7 @@ import glob
 import os
 import shutil
 
-# import docx
+import docx
 import numpy as np
 import pandas as pd
 import streamlit as st
