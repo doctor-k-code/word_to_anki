@@ -27,7 +27,7 @@ def  list_to_table(title, all_paragraph, columns=COLUMNS):
 
 
 # アップロードされたファイルからankiに登録する用の表を作る関数
-def file_to_table(uploaded_file, table=None):
+def file_to_table(uploaded_file, table=None, title=None):
     doc = docx.Document(uploaded_file)
 
     # 空白を除き、各段落をリストで管理する。
@@ -45,3 +45,11 @@ def file_to_table(uploaded_file, table=None):
         # 余りを除いて表を作成し、Debugの参考にする
         all_paragraph = all_paragraph[:-rest_par_num]
         st.write(f'段落数が一致しません。ファイルを確認して下さい。: {uploaded_file.name}')
+
+    # リストを表に変換する
+    # tableがNoneでなければ結合して返す
+    tmp_table =  list_to_table(title, all_paragraph)
+    if table is None:
+        return tmp_table
+    else:
+        return pd.concat([table, tmp_table], axis=0)
