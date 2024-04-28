@@ -17,11 +17,11 @@ from utils import file_to_table, table_to_csv
 '''
 # wordファイルをanki用のCSVファイルに変換します
 ## 前提
-* 教科書などの暗記事項を[anki](https://apps.ankiweb.net/)のカードにします。
-* フィールドは"Front", "Back", "Title", "Page"で出力します。
+* 教科書などの暗記事項を[anki](https://apps.ankiweb.net/)のカードにします
+* フィールドは"Front", "Back", "Title", "Page"で出力します
 * Front: カードの表
 * Back: カードの裏
-* Title: 教科書名を想定
+* Title: 教科書名などを想定
 * Page: ページ番号
 ## 使用方法
 ### まずは以下のようなワードファイルを作成します
@@ -43,7 +43,9 @@ https://github.com/doctor-k-code
 st.code(word_example)
 
 '''
-### 後はタイトル（教科書名など）を入力してワードファイルをアップロードします。
+* ページ番号、カードの表、カードの裏をそれぞれ改行しないとバグが起きます
+* 簡単な例で一度試してみることをおすすめします
+### タイトル（教科書名など）を入力してワードファイルをアップロードします
 '''
 
 title = st.text_input("タイトル")
@@ -53,7 +55,7 @@ uploaded_files = st.file_uploader(
 
 if st.button("実行"):
     if not title:
-        st.write("**タイトル**を入力して下さい。")
+        st.write("**タイトル**を入力して下さい")
     else:
         time_stamp = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
         time_stamp = time_stamp.strftime('%m%d%H%M')
